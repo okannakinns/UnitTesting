@@ -1,0 +1,58 @@
+# Build output
+bin/
+obj/
+artifacts/
+TestResults/
+coverage/
+coverage.*
+*.trx
+*.coverage
+*.coveragexml
+*.cobertura.xml
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Rider / ReSharper
+.idea/
+_ReSharper*/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# .NET / NuGet
+project.lock.json
+project.assets.json
+*.nuget.g.props
+*.nuget.g.targets
+packages/
+*.nupkg
+*.snupkg
+
+# Logs and diagnostics
+*.log
+logs/
+*.binlog
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local configuration and secrets
+appsettings.Local.json
+appsettings.*.local.json
+*.db
+*.db-shm
+*.db-wal
+

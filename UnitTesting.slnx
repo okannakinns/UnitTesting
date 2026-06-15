@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/Concepts/src/">
+    <Project Path="Concepts/src/UnderstandingDependencies.Api/UnderstandingDependencies.Api.csproj" />
+  </Folder>
+  <Folder Name="/Concepts/test/">
+    <Project Path="Concepts/test/UnderstandingDependencies.Api.Tests.Unit/UnderstandingDependencies.Api.Tests.Unit.csproj" />
+  </Folder>
+  <Folder Name="/Fundamentals/src/">
+    <Project Path="Fundamentals/src/CalculatorLibrary/CalculatorLibrary.csproj" />
+  </Folder>
+  <Folder Name="/Fundamentals/test/CalculatorLibraryTests/">
+    <Project Path="Fundamentals/test/CalculatorLibraryTests/CalculatorLibrary.Tests.Unit.csproj" />
+  </Folder>
+  <Folder Name="/RealWorld/src/">
+    <Project Path="RealWorld/src/Users.Api/Users.Api.csproj" />
+  </Folder>
+  <Folder Name="/RealWorld/test/">
+    <Project Path="RealWorld/test/Users.Api.Tests.Unit/Users.Api.Tests.Unit.csproj" />
+  </Folder>
+  <Folder Name="/Techniques/src/">
+    <Project Path="Techniques/src/TestingTechniques/TestingTechniques.csproj" />
+  </Folder>
+  <Folder Name="/Techniques/test/">
+    <Project Path="Techniques/test/TestingTechniques.Test.Unit/TestingTechniques.Test.Unit.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,25 @@
+@Users.Api_HostAddress = http://localhost:5187
+
+GET {{Users.Api_HostAddress}}/api/Users/GetAll
+Accept: application/json
+
+###
+
+GET {{Users.Api_HostAddress}}/api/Users/GetById/b3012cb0-242d-43a0-a785-b933732f3969
+Accept: application/json
+
+###
+
+POST {{Users.Api_HostAddress}}/api/Users/Create
+Accept: application/json
+Content-Type: application/json
+{
+  "fullName": "Okan Akın"
+}
+
+###
+
+DELETE {{Users.Api_HostAddress}}/api/Users/DeleteById/b3012cb0-242d-43a0-a785-b933732f3969
+Accept: application/json
+
+###
