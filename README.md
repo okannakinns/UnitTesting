@@ -1,10 +1,10 @@
-# UnitTesting
+# 🧪 UnitTesting
 
 This repository is a .NET project that explores unit testing step by step, from fundamentals to real-world scenarios. The project is organized into four separate sections, starting with simple calculator tests and expanding into assertion techniques, dependency isolation, mocking, validation, logging, and ASP.NET Core Web API service testing.
 
 The goal is not only to write tests, but also to demonstrate testable code design, dependency abstraction, service-layer behavior verification, and reliable success/error flows in a real API scenario.
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 UnitTesting/
@@ -24,7 +24,7 @@ UnitTesting/
 └── UnitTesting.slnx
 ```
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 | Technology / Library | Purpose |
 | --- | --- |
@@ -41,9 +41,9 @@ UnitTesting/
 | Coverlet | Test coverage collection infrastructure |
 | Microsoft.NET.Test.Sdk | .NET test runner integration |
 
-## Sections
+## 📚 Sections
 
-### Fundamentals
+### 🔹 Fundamentals
 
 The `CalculatorLibrary` project demonstrates the building blocks of unit testing. It uses four basic arithmetic operations to show `Theory`, `InlineData`, expected/actual comparisons, test fixture lifecycle, and xUnit output usage.
 
@@ -55,7 +55,7 @@ Covered topics:
 - Test setup/teardown flow with `IAsyncLifetime`
 - Skipped test scenario
 
-### Techniques
+### 🔹 Techniques
 
 The `TestingTechniques` section is designed to practice assertions across different data types and behaviors. It includes tests for strings, numbers, dates, objects, collections, exceptions, events, and internal members.
 
@@ -70,7 +70,7 @@ Covered topics:
 - Event raise verification
 - Testing internal members with `InternalsVisibleTo`
 
-### Concepts
+### 🔹 Concepts
 
 `UnderstandingDependencies.Api` is an ASP.NET Core Web API example focused on understanding dependencies. It includes a data retrieval scenario through repository and service layers. In the test project, the repository dependency is mocked so that service behavior can be verified in isolation.
 
@@ -83,7 +83,7 @@ Covered topics:
 - Alternative examples with Moq
 - EF Core and SQL Server connection concept
 
-### RealWorld
+### 🔹 RealWorld
 
 `Users.Api` is the most comprehensive real-world scenario in this repository. It includes service, repository, controller, validation, and logging layers for user management. The purpose of this section is to test an API's business rules without depending on database or framework implementation details.
 
@@ -109,7 +109,7 @@ Tested scenarios:
 - Logger call verification
 - Controller actions returning HTTP 200 responses
 
-## Architectural Approach
+## 🧩 Architectural Approach
 
 The project makes testability principles explicit:
 
@@ -120,7 +120,7 @@ The project makes testability principles explicit:
 - Logging is abstracted through `ILoggerAdapter`, making it verifiable in tests.
 - Validation rules are defined centrally and readably with `FluentValidation`.
 
-## Test Coverage
+## ✅ Test Coverage
 
 This repository contains 47 test scenarios:
 
@@ -139,7 +139,7 @@ Test result:
 Failed: 0, Passed: 46, Skipped: 1, Total: 47
 ```
 
-## Key Takeaways
+## 🚀 Key Takeaways
 
 - Unit testing is approached not only at the assertion level, but also at the code design level.
 - Dependencies are abstracted through interfaces.
