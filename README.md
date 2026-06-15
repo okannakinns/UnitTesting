@@ -1,10 +1,10 @@
 # UnitTesting
 
-Bu repository, .NET ekosisteminde unit test yazımını temelden gerçek hayat senaryolarına kadar adım adım inceleyen bir projedir. Proje; basit hesap makinesi testlerinden başlayıp assertion teknikleri, dependency isolation, mocking, validation, logging ve ASP.NET Core Web API servislerinin test edilmesine kadar genişleyen dört ayrı bölümden oluşur.
+This repository is a .NET project that explores unit testing step by step, from fundamentals to real-world scenarios. The project is organized into four separate sections, starting with simple calculator tests and expanding into assertion techniques, dependency isolation, mocking, validation, logging, and ASP.NET Core Web API service testing.
 
-Amaç yalnızca test yazmak değil; test edilebilir kod tasarımı, bağımlılıkların soyutlanması, servis katmanı davranışlarının doğrulanması ve gerçek bir API senaryosunda hata/başarı akışlarının güvence altına alınmasıdır.
+The goal is not only to write tests, but also to demonstrate testable code design, dependency abstraction, service-layer behavior verification, and reliable success/error flows in a real API scenario.
 
-## Proje Yapısı
+## Project Structure
 
 ```text
 UnitTesting/
@@ -24,127 +24,126 @@ UnitTesting/
 └── UnitTesting.slnx
 ```
 
-## Kullanılan Teknolojiler
+## Technologies Used
 
-| Teknoloji / Kütüphane | Kullanım Amacı |
+| Technology / Library | Purpose |
 | --- | --- |
-| .NET 10 | Tüm class library, Web API ve test projelerinin hedef framework'ü |
-| C# | Uygulama, API ve test kodlarının geliştirilmesi |
-| ASP.NET Core Web API | `Concepts` ve `RealWorld` bölümlerindeki HTTP API projeleri |
-| Entity Framework Core | Repository katmanında SQL Server erişimi ve migration yönetimi |
-| SQL Server LocalDB | Lokal geliştirme veritabanı senaryosu |
-| xUnit | Unit test framework'ü |
-| FluentAssertions | Okunabilir ve expressive assertion yazımı |
-| NSubstitute | Mock, substitute ve davranış doğrulama |
-| Moq | Alternatif mocking yaklaşımını göstermek için konsept seviyesinde kullanım |
-| FluentValidation | DTO doğrulama kurallarının modellenmesi |
-| Coverlet | Test coverage toplama altyapısı |
-| Microsoft.NET.Test.Sdk | .NET test runner entegrasyonu |
+| .NET 10 | Target framework for all class library, Web API, and test projects |
+| C# | Application, API, and test implementation |
+| ASP.NET Core Web API | HTTP API projects in the `Concepts` and `RealWorld` sections |
+| Entity Framework Core | SQL Server data access and migration management in the repository layer |
+| SQL Server LocalDB | Local development database scenario |
+| xUnit | Unit testing framework |
+| FluentAssertions | Readable and expressive assertion syntax |
+| NSubstitute | Mocking, substitution, and behavior verification |
+| Moq | Alternative mocking approach demonstrated at the concept level |
+| FluentValidation | DTO validation rule modeling |
+| Coverlet | Test coverage collection infrastructure |
+| Microsoft.NET.Test.Sdk | .NET test runner integration |
 
-## Bölümler
+## Sections
 
 ### Fundamentals
 
-`CalculatorLibrary` projesi unit testin temel yapı taşlarını gösterir. Dört temel işlem üzerinden `Theory`, `InlineData`, expected/actual karşılaştırması, test fixture yaşam döngüsü ve xUnit output kullanımı örneklenir.
+The `CalculatorLibrary` project demonstrates the building blocks of unit testing. It uses four basic arithmetic operations to show `Theory`, `InlineData`, expected/actual comparisons, test fixture lifecycle, and xUnit output usage.
 
-Kapsanan başlıklar:
+Covered topics:
 
-- `Fact` ve `Theory` yaklaşımı
-- Parametrik testler
-- FluentAssertions ile okunabilir doğrulamalar
-- `IAsyncLifetime` ile test setup/teardown akışı
-- Skip edilen test senaryosu
+- `Fact` and `Theory` usage
+- Parameterized tests
+- Readable assertions with FluentAssertions
+- Test setup/teardown flow with `IAsyncLifetime`
+- Skipped test scenario
 
 ### Techniques
 
-`TestingTechniques` bölümü, farklı veri tipleri ve davranışlar üzerinde assertion pratiği yapmak için hazırlanmıştır. String, sayı, tarih, nesne, koleksiyon, exception, event ve internal member testleri içerir.
+The `TestingTechniques` section is designed to practice assertions across different data types and behaviors. It includes tests for strings, numbers, dates, objects, collections, exceptions, events, and internal members.
 
-Kapsanan başlıklar:
+Covered topics:
 
-- String assertion'ları
-- Numeric assertion'lar
-- `DateOnly` doğrulamaları
-- Nesne karşılaştırmaları ve `BeEquivalentTo`
-- Koleksiyon doğrulamaları
-- Exception testleri
-- Event raise doğrulama
-- `InternalsVisibleTo` ile internal üyelerin test edilmesi
+- String assertions
+- Numeric assertions
+- `DateOnly` validations
+- Object comparisons and `BeEquivalentTo`
+- Collection assertions
+- Exception tests
+- Event raise verification
+- Testing internal members with `InternalsVisibleTo`
 
 ### Concepts
 
-`UnderstandingDependencies.Api`, bağımlılıkları anlamaya odaklanan bir ASP.NET Core Web API örneğidir. Repository ve service katmanı üzerinden veri çekme senaryosu bulunur. Test projesinde repository bağımlılığı mock'lanarak servis davranışı izole şekilde doğrulanır.
+`UnderstandingDependencies.Api` is an ASP.NET Core Web API example focused on understanding dependencies. It includes a data retrieval scenario through repository and service layers. In the test project, the repository dependency is mocked so that service behavior can be verified in isolation.
 
-Kapsanan başlıklar:
+Covered topics:
 
 - Dependency abstraction
-- Repository interface kullanımı
-- Service unit testleri
-- NSubstitute ile bağımlılıkları izole etme
-- Moq kullanımına dair alternatif örnekler
-- EF Core ve SQL Server bağlantı konsepti
+- Repository interface usage
+- Service unit tests
+- Isolating dependencies with NSubstitute
+- Alternative examples with Moq
+- EF Core and SQL Server connection concept
 
 ### RealWorld
 
-`Users.Api`, projedeki en kapsamlı gerçek hayat senaryosudur. Kullanıcı yönetimi için servis, repository, controller, validation ve logging katmanlarını içerir. Bu bölümde amaç, bir API'nin iş kurallarını database veya framework detaylarına bağımlı kalmadan test etmektir.
+`Users.Api` is the most comprehensive real-world scenario in this repository. It includes service, repository, controller, validation, and logging layers for user management. The purpose of this section is to test an API's business rules without depending on database or framework implementation details.
 
-API davranışları:
+API behaviors:
 
-- Kullanıcıları listeleme
-- Id ile kullanıcı getirme
-- Yeni kullanıcı oluşturma
-- Kullanıcı silme
-- Aynı isimle kullanıcı oluşturmayı engelleme
-- Geçersiz DTO verisini reddetme
-- Operasyonları loglama
-- Exception durumlarında loglama ve hatayı yukarı taşıma
+- Listing users
+- Retrieving a user by id
+- Creating a new user
+- Deleting a user
+- Preventing duplicate user names
+- Rejecting invalid DTO input
+- Logging operations
+- Logging and rethrowing exceptions
 
-Test edilen senaryolar:
+Tested scenarios:
 
-- Boş ve dolu liste sonuçları
-- Kullanıcı bulunması / bulunmaması
-- Validation hataları
-- Duplicate name kontrolü
-- Başarılı create/delete akışları
-- Repository exception durumları
-- Logger çağrılarının doğrulanması
-- Controller action'larının HTTP 200 sonucu dönmesi
+- Empty and populated list results
+- User found / not found cases
+- Validation errors
+- Duplicate name checks
+- Successful create/delete flows
+- Repository exception cases
+- Logger call verification
+- Controller actions returning HTTP 200 responses
 
-## Mimari Yaklaşım
+## Architectural Approach
 
-Proje özellikle test edilebilirlik prensiplerini görünür hale getirir:
+The project makes testability principles explicit:
 
-- Controller katmanı HTTP request/response sorumluluğunda tutulur.
-- Service katmanı iş kurallarını, validation'ı, logging'i ve hata akışlarını yönetir.
-- Repository katmanı veri erişimini soyutlar.
-- Interface'ler sayesinde servisler testlerde gerçek veritabanına ihtiyaç duymadan doğrulanır.
-- Logging, `ILoggerAdapter` ile soyutlanarak testlerde doğrulanabilir hale getirilir.
-- Validation kuralları `FluentValidation` ile merkezi ve okunabilir şekilde tanımlanır.
+- The controller layer is responsible for HTTP request/response handling.
+- The service layer manages business rules, validation, logging, and error flows.
+- The repository layer abstracts data access.
+- Interfaces allow services to be tested without requiring a real database.
+- Logging is abstracted through `ILoggerAdapter`, making it verifiable in tests.
+- Validation rules are defined centrally and readably with `FluentValidation`.
 
-## Test Kapsamı
+## Test Coverage
 
-Bu repository toplam 47 test senaryosu içerir:
+This repository contains 47 test scenarios:
 
-- 46 başarılı test
-- 1 bilinçli olarak atlanan test
+- 46 passing tests
+- 1 intentionally skipped test
 
-Son doğrulama komutu:
+Latest verification command:
 
 ```bash
 dotnet test UnitTesting.sln --no-restore
 ```
 
-Test sonucu:
+Test result:
 
 ```text
 Failed: 0, Passed: 46, Skipped: 1, Total: 47
 ```
 
+## Key Takeaways
 
-## Öne Çıkan Kazanımlar
-
-- Unit test yazımının yalnızca assertion seviyesinde değil, kod tasarımı seviyesinde ele alınması
-- Bağımlılıkların interface üzerinden soyutlanması
-- Mock/substitute kullanarak hızlı ve izole testler yazılması
-- Service ve controller davranışlarının ayrı ayrı doğrulanması
-- Validation, exception handling ve logging gibi gerçek dünya ihtiyaçlarının test kapsamına alınması
-- Test isimlendirmelerinde `Method_ShouldExpectedBehavior_WhenCondition` formatının kullanılması
+- Unit testing is approached not only at the assertion level, but also at the code design level.
+- Dependencies are abstracted through interfaces.
+- Fast and isolated tests are written with mocks/substitutes.
+- Service and controller behaviors are verified separately.
+- Real-world needs such as validation, exception handling, and logging are included in the test scope.
+- Test names follow the `Method_ShouldExpectedBehavior_WhenCondition` format.
